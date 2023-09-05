@@ -2,4 +2,4 @@
 
 This repository includes my final apprenticeship report and also the master's thesis. The topic of the master's thesis is **Topic extraction from customer call logs using word embeddings and clustering techniques**
  
-**![Front page](image.png)
+![Front page](image.png)
