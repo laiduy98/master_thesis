@@ -1,0 +1,21 @@
+\chapter{Assessment and proposals}
+
+\startcontents[chapters]
+\printmyminitoc{
+}
+
+\section{Fiber distribution point images processing}
+
+The previous system with image fingerprints method can filter out 90\% of the false cases, only 10\% need to pass to the new system for deeper inspection. With the accuracy of the new method is over 90\% with the images that bypass the fingerprint method, Now the accuracy of the combination of these 2 systems together is 99\%, and it is already deployed in the production environment. 
+
+However, this method still has a drawback. The time to proceed with a case, from input to output is the similarity score is considered slower than the fingerprint method. This is also the reason why we don't replace it completely but set it as an additional section<
+
+\section{Research the feasibility of moving the team's infrastructure to the Google Cloud}
+
+With the undeniable advantages of moving to Google Cloud compared to the current local server and workflow, we have the opportunity to revolutionize the way we manage our IT resources and drive significant improvements across various aspects of our organization. It could take some effort to build the system in the beginning but the benefit after it is huge. After my research, the company decided to start the process of moving to the cloud starting in September 2023. I will depart before the transition but I hope the transition could facilitate the workflow in the future, and at the same time increase the stability of the production environment that we currently have.
+
+\section{Apply machine learning techniques on call log from SFR's call center}
+
+We can see that in the tree of hierarchy clustering techniques, the most significant word of each topic is very promising. This method can cluster use cases in each small topic, with the cluster of technical problems, or the cluster of invoices, etc. being very well separated. We can also see that the relationship between clusters that are not so far from each other, for example, the invoice topics is close to the termination service. The termination of the customers is usually because they are not happy with the current payment problem.
+
+This method still has some drawbacks. With one conversation, it could only be classified as one topic. However, in reality, One conversation could contain multiple topics at the same time. The customer could call the call center for multiple reasons or multiple problems. This point should be a point to focus on and research in the future of this project.

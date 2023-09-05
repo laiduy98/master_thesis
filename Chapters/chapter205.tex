@@ -1,0 +1,20 @@
+\chapter{Conclusion and future works}
+
+\startcontents[chapters]
+\printmyminitoc{
+
+}
+
+\section{Conclusion}
+
+We can see that in the tree of hierarchy clustering techniques, the most significant word of each topic is very promising. This method can cluster use cases in each small topic, with the cluster of technical problems, or the cluster of invoices, etc. being very well separated. 
+
+There are many parameters in this method to adjust to find the best set out of it. After a dozen experiments, it is almost certain that MiniLMv2 performs better than CamemBERT. We can notice that in the similarity matrix between topics, the CamemBERT case is not very distinguishable between topics compared to MiniLM2. With the representation of the similarity matrix, we can also see that the technique that is the best in separating topics could be HDBSCAN. it is also not necessary for us to choose the number of clusters before but HDBSCAN can choose it.
+
+This method still has some drawbacks. With one conversation, it could only be classified as one topic. However, in reality, One conversation could contain multiple topics at the same time. The customer could call the call center for multiple reasons or multiple problems. This point should be a point to focus on and research in the future of this project.
+
+\section{Future works}
+
+While our current topic modeling implementation has provided valuable insights, exploring hyperparameter tuning could significantly enhance the quality of topics extracted from the corpus. Investigating the optimal values for parameters such as the number of topics in Kmeans and hierarchy clustering, or different combination of UMAP and PCE could lead to more accurate and coherent topic assignments. Adopting techniques like cross-validation and grid search can systematically identify the hyperparameters that best capture the underlying structure of the data.
+
+To extend the utility of our topic modeling system beyond our immediate team, the creation of an API (Application Programming Interface) could allow other teams and applications to integrate topic modeling functionality into their workflows. By providing an API, we enable seamless access to the topic modeling capabilities, enabling other teams to incorporate topic analysis within their projects without needing to delve into the technical intricacies of our model. The team in charge of building the interface for the agent could upgrade their product and call our API to suggest to the user the most significant word, making it easier for them when labeling the calls.

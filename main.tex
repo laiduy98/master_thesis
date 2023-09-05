@@ -1,0 +1,235 @@
+\documentclass[11pt]{book}
+%\usepackage{natbib}
+\usepackage[
+	backend=bibtex,
+	style=numeric,
+]{biblatex}
+\addbibresource{bibliographie}
+
+
+\usepackage[english]{babel}
+% \usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\setmainfont{Carlito}
+\usepackage[a4paper,left=3cm,right=2.5cm,top=3cm,bottom=3cm, twoside]{geometry}
+\usepackage{xcolor}
+\usepackage{stmaryrd}
+\usepackage{amssymb}
+\usepackage{amsmath}
+% \usepackage{libertine}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{apalike}
+\usepackage{minitoc}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{epigraph}
+\usetikzlibrary{shadows.blur}
+\usepackage{lscape}
+\usepackage{titletoc}
+\usepackage{lipsum}
+% \usepackage{cite}
+\usepackage{booktabs}
+\usepackage{arydshln}
+\usepackage[nonumberlist]{glossaries}
+\usepackage{calc}
+\usepackage[]{titlesec} 
+\definecolor{linkColor}{HTML}{32a852}
+\usepackage[colorlinks=true,citecolor=linkColor,linkcolor=black]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{listings}
+% \usepackage{lmodern} 
+% \usepackage{xltabular}
+% \usepackage{booktabs}
+% \usepackage[normalem]{ulem}
+% \useunder{\uline}{\ul}{}
+% \usepackage{subfigure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lstset{
+  % basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  % postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+\definecolor{yourcolor}{HTML}{690843}%{008bb2}
+
+\titleformat{\chapter}[display]
+{\normalfont\color{yourcolor}}
+{\filleft\huge\color{black}\textsc\chaptertitlename\hspace*{2mm}%
+	\begin{tikzpicture}[baseline={([yshift=-.6ex]current bounding box.center)}]
+	\node[fill=yourcolor,circle,text=white] {\thechapter};
+	\end{tikzpicture}
+}
+{1ex}
+{\titlerule[1.5pt]\vspace*{1.5ex}\Huge\color{black}\textsc}
+[]
+
+\titleformat{name=\chapter,numberless}[display]
+{\normalfont\color{black}}
+{}
+{1ex}
+{\vspace*{-5cm}\Huge\textsc}
+[]
+
+%command to print the acutal minitoc
+\newcommand{\printmyminitoc}[1]{%
+	\noindent\hspace{1cm}%
+	\colorlet{chpnumbercolor}{black}%
+	\begin{tikzpicture}
+	\node(s){
+		\begin{minipage}{.9\linewidth}%minipage trick
+		\printcontents[chapters]{}{1}{}
+		\end{minipage}
+	};
+	{
+		\color{yourcolor}
+		\draw(s.north west)--(s.north east) (s.south west)--(s.south east);
+	}
+	\end{tikzpicture}
+	\vspace*{3ex}
+	
+	#1
+	\vfill
+	\pagebreak
+}
+
+
+\newcommand{\HRule}{\rule{\linewidth}{0.7mm}}
+\newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\begin{document}
+	
+	\begin{titlepage}
+		\begin{center}
+			\begin{tabular}{c@{\hskip 1.5cm}c@{\hskip 1.5cm}c@{\hskip 1.5cm}c}
+				\includegraphics[height=1.3cm]{images/Saclay.png} &
+				\includegraphics[height=1.3cm]{images/CFA.jpg} &
+                \includegraphics[height=1.3cm]{images/SFR.png} &
+                \includegraphics[height=1.3cm]{images/Altice.png} \\
+			\end{tabular}
+		\end{center}
+	
+		
+		\begin{center}
+
+			Université Paris-Saclay\\
+			Master 2 Data Science - Apprentissage\\
+            2022 - 2023
+  
+  			\vfill
+  			
+	 		\HRule \\[0.1cm]
+	 		 { \Large {\bfseries Final apprenticeship report} \\
+                            and \\
+                            {\bfseries Master's thesis} \\
+                            Topic extraction from customer call logs using word embeddings and
+                            clustering techniques
+                            }
+	  		\Hrule \\
+		
+		\end{center}
+		
+		\vfill
+			
+		\begin{center}
+			\textsc{\Large \textbf{Khang Duy LAI}}\\[1cm] 
+		
+	
+			
+			\vspace{1cm}
+	
+			September 2023
+		\end{center}
+		
+		\vspace{1cm}
+			
+		
+		\begin{center}
+			\begin{tabular}{lll}
+				 \textsc{\textbf{Romain DADEN}} & Apprenticeship supervisor \\
+				 \textsc{\textbf{Kim NGUYEN}} & Academic tutor\\
+
+				
+			\end{tabular}\\[1cm]
+		\end{center}
+
+	\newpage
+	\end{titlepage}
+
+
+
+\pagestyle{fancy}
+
+\fancyhead{}
+
+\renewcommand{\chaptermark}[1]{\markboth{\textsc{#1}}{}}
+
+
+\frontmatter
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{Table of contents}
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of figures}
+
+% \listoftables
+% \addcontentsline{toc}{chapter}{List of tables}
+
+
+\mainmatter
+
+\setlength{\parskip}{.7em}
+
+\titlespacing*{\section}{0pt}{.9em}{.8em}
+\renewcommand{\baselinestretch}{1.1}
+
+
+\fancyhead[RO]{\leftmark}
+\fancyhead[LE]{\textsc{\chaptername~\thechapter}}
+
+\input{Chapters/acknowledgements.tex}
+\input{Chapters/abstract.tex}
+
+\part{Apprenticeship report}
+\input{Chapters/chapter01.tex}
+\input{Chapters/chapter02.tex}
+\input{Chapters/chapter03.tex}
+\input{Chapters/chapter04.tex}
+\input{Chapters/chapter05.tex}
+
+\part{Master's thesis}
+\input{Chapters/chapter201}
+\input{Chapters/chapter202}
+\input{Chapters/chapter203}
+\input{Chapters/chapter204}
+\input{Chapters/chapter205}
+
+
+\pagebreak 
+\appendix
+\input{Chapters/appendix01}
+
+\printbibliography
+\addcontentsline{toc}{chapter}{Bibliographie}
+
+
+
+\end{document}
